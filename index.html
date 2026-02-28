@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Atlas | Moderne Pflanzenwelt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <img
+      class="hero__image"
+      src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=1400&q=80"
+      alt="Erdbeeren an der Pflanze"
+    />
+    <div class="hero__content">
+      <p class="hero__eyebrow">Pflanzenwissen modern entdecken</p>
+      <h1>Plant Atlas</h1>
+      <p>Finde Pflanzen mit kompakten Infos zu Ursprung, Klima, Bewaesserung, Aussaat und Ernte.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label class="search">
+        <span>Suchen</span>
+        <input id="searchInput" type="search" placeholder="z. B. Erdbeere, Lavendel, Tomate" />
+      </label>
+      <label class="filter">
+        <span>Klima</span>
+        <select id="climateFilter">
+          <option value="all">Alle</option>
+          <option value="gemaessigt">Gemaessigt</option>
+          <option value="mediterran">Mediterran</option>
+          <option value="tropisch">Tropisch</option>
+        </select>
+      </label>
+    </section>
+
+    <section>
+      <div class="grid" id="plantGrid"></div>
+    </section>
+  </main>
+
+  <script src="plants.js"></script>
+</body>
+</html>
