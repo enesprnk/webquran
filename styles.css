@@ -118,6 +118,12 @@ select {
   gap: 1rem;
 }
 
+.result-count {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
 .calendar-section {
   margin-top: 1.6rem;
 }

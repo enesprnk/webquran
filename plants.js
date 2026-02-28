@@ -689,6 +689,7 @@ function createCard(plant) {
 
 function renderGrid() {
   const grid = document.getElementById("plantGrid");
+  const resultCount = document.getElementById("resultCount");
   if (!grid) return;
 
   const searchInput = document.getElementById("searchInput");
@@ -716,10 +717,16 @@ function renderGrid() {
     });
 
     if (!result.length) {
+      if (resultCount) {
+        resultCount.textContent = "0 Pflanzen gefunden";
+      }
       grid.innerHTML = `<div class="empty">Keine Pflanze gefunden. Versuche einen anderen Suchbegriff oder Filter.</div>`;
       return;
     }
 
+    if (resultCount) {
+      resultCount.textContent = `${result.length} Pflanzen gefunden`;
+    }
     grid.innerHTML = result.map(createCard).join("");
   }
 
