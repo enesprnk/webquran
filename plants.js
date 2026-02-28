@@ -730,6 +730,29 @@ function renderGrid() {
   draw();
 }
 
+function renderMonthCalendar() {
+  const calendar = document.getElementById("monthCalendar");
+  if (!calendar) return;
+
+  const cards = Array.from({ length: 12 }, (_, index) => {
+    const month = index + 1;
+    const sowingPlants = plants.filter((plant) => plant.sowingMonths.includes(month)).map((plant) => plant.name);
+    const harvestPlants = plants.filter((plant) => plant.harvestMonths.includes(month)).map((plant) => plant.name);
+
+    return `
+      <article class="month-card">
+        <h3>${monthNames[month]}</h3>
+        <p>Aussaat</p>
+        <ul>${(sowingPlants.length ? sowingPlants : ["-"]).map((item) => `<li>${item}</li>`).join("")}</ul>
+        <p>Ernte</p>
+        <ul>${(harvestPlants.length ? harvestPlants : ["-"]).map((item) => `<li>${item}</li>`).join("")}</ul>
+      </article>
+    `;
+  });
+
+  calendar.innerHTML = cards.join("");
+}
+
 function renderDetail() {
   const container = document.getElementById("detailPage");
   if (!container) return;
@@ -781,4 +804,5 @@ function renderDetail() {
 }
 
 renderGrid();
+renderMonthCalendar();
 renderDetail();

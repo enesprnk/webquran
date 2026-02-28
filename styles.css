@@ -118,6 +118,54 @@ select {
   gap: 1rem;
 }
 
+.calendar-section {
+  margin-top: 1.6rem;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.section-subtitle {
+  margin: 0.3rem 0 0.9rem;
+  color: var(--muted);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.month-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 6px 17px rgba(11, 24, 14, 0.06);
+}
+
+.month-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.month-card p {
+  margin: 0.45rem 0 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1c5536;
+}
+
+.month-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
